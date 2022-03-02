@@ -30,6 +30,24 @@ class Planet(TimeStampedModel, SimpleNameModel):
 
 class People(TimeStampedModel, SimpleNameModel):
     """ Personajes del universo de Star Wars """
+    HAIR_COLOR_CHOICES = (
+        ("BLACK", "BLACK"),
+        ("BROWN", "BROWN"),
+        ("BLONDE", "BLONDE"),
+        ("RED", "RED"),
+        ("WHITE", "WHITE"),
+        ("BALD", "BALD"),
+
+    )
+    EYE_COLOR_CHOICES = (
+        ("BLACK", "BLACK"),
+        ("BROWN", "BROWN"),
+        ("YELLOW", "YELLOW"),
+        ("RED", "RED"),
+        ("WHITE", "WHITE"),
+        ("BALD", "BALD"),
+
+    )
     MALE = 'male'
     FEMALE = 'female'
     HERMAPHRODITE = 'hermaphrodite'
@@ -44,12 +62,15 @@ class People(TimeStampedModel, SimpleNameModel):
 
     height = models.CharField(max_length=16, blank=True)
     mass = models.CharField(max_length=16, blank=True)
-    hair_color = models.CharField(max_length=32, blank=True)
+    hair_color = models.CharField(max_length=32, blank=True,
+                                  choices=HAIR_COLOR_CHOICES)
     skin_color = models.CharField(max_length=32, blank=True)
-    eye_color = models.CharField(max_length=32, blank=True)
+    eye_color = models.CharField(max_length=32, blank=True,
+                                 choices=EYE_COLOR_CHOICES)
     birth_year = models.CharField(max_length=16, blank=True)
     gender = models.CharField(max_length=64, choices=GENDER)
-    home_world = models.ForeignKey(Planet, on_delete=models.CASCADE, related_name='inhabitants')
+    home_world = models.ForeignKey(Planet, on_delete=models.CASCADE,
+                                   related_name='inhabitants')
 
     class Meta:
         db_table = 'people'
