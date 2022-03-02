@@ -1,40 +1,35 @@
-# SW API GraphQL
+# Inventory 
+It is a project created to execute the proposed technical test    
+    
+ 
+ You must run the following command to build all the project containers:    
+    
+ $ make build    
+you should generate the initial Django migrations, for them execute the following command    
+    
+ $ make migrate    
+## Run project    
+ To run the project you must execute the following command    
+    
+ $ make up    
+> If you have problems connecting Django with Postgres, you should run the command: make restart CONTAINER=django    
+ ## Other commands    
+    
+ 1. **Create a new app:** make startapp NAME=example    
+ 2. **Generate migrations:** make migrate    
+ 3. **Create a superuser:** make superuser  
+  
+## Test Environment  
+  
+In the following url you will be able to carry out tests in a secure environment, with the following superuser:  
+[Inventory - Test Environment URL](https://inventory-enodev.herokuapp.com/)  
+  
+ - **User:** root  
+ - **Password:** 3n0cd3v
 
-## Requirements
-* [Python](https://www.python.org/) (realizado en python 3.8)
-* [Django](https://github.com/django/django)
-* [Django Filter](https://github.com/carltongibson/django-filter)
-* [Django model utils](https://github.com/jazzband/django-model-utils)
-* [Graphene](https://github.com/graphql-python/graphene-django)
-* [.EVN](https://github.com/theskumar/python-dotenv)
+## Sort packages in the requirements.txt file
 
-## Setup
+First you need to add the package to the requirements.txt file, then you run the **make build** command.
+Finally, so that the packages are ordered and with their version established in the requirements.txt file, you must execute the following command.
 
-Clone the project
-```
-git clone https://github.com/gustav0/swapi.git
-```
-
-Move into de repo and install dependencies
-```
-pip install -r requirements.txt
-```
-
-Run migrations and load fixtures
-```
-python manage.py migrate
-python manage.py load_fixtures
-```
-
-### Running the server
-```
-python manage.py runserver
-```
-If you want to check it out, access the graphi explorer here: `127.0.0.1:8000/explore`.
-
-The service should be available in the URL: `127.0.0.1:8000/graphql`.
-
-### Runing the tests
-```
-python manage.py test
-```
+    $ make get-requirements
