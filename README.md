@@ -25,7 +25,7 @@ In the following url you will be able to carry out tests in a secure environment
 [Inventory - Test Environment URL](http://159.223.105.137:8000/admin/)  
   
  - **User:** root  
- - **Password:** 3n0cd3v
+ - **Password:** Hogar2020
 
 If you want to check it out, access the graphi explorer here: (http://159.223.105.137:8000/explore)
 
