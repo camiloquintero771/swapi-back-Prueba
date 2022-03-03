@@ -25,7 +25,7 @@ class Query(graphene.ObjectType):
     all_people = DjangoFilterConnectionField(PeopleType,
                                              GENDER=graphene.String())
 
-    """ fILTRADO POR LOS VALORES DE GENERO"""
+    """ FILTRADO POR LOS VALORES DE GENERO"""
     def resolve_all_people(root, info, GENDER):
             return People.object.filter(G=GENDER)
 

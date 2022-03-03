@@ -1,4 +1,4 @@
-# Inventory 
+# LQN
 It is a project created to execute the proposed technical test    
     
  
@@ -22,11 +22,14 @@ you should generate the initial Django migrations, for them execute the followin
 ## Test Environment  
   
 In the following url you will be able to carry out tests in a secure environment, with the following superuser:  
-[Inventory - Test Environment URL](https://inventory-enodev.herokuapp.com/)  
+[Inventory - Test Environment URL](http://159.223.105.137:8000/admin/)  
   
  - **User:** root  
  - **Password:** 3n0cd3v
 
+If you want to check it out, access the graphi explorer here: (http://159.223.105.137:8000/explore)
+
+The service should be available in the URL: (http://159.223.105.137:8000/graphql)
 ## Sort packages in the requirements.txt file
 
 First you need to add the package to the requirements.txt file, then you run the **make build** command.
